@@ -1,0 +1,161 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  font-family: "montserrat";
+}
+
+#root{
+
+}
+
+button {
+  border: none;
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+  padding: .5rem 1rem;
+  border-radius:10px;
+}
+
+button:hover {
+  background-color: #adc0ce;
+}
+
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  background-color: #e46b72;
+  padding: 30px;
+  width: 100%;
+  position:sticky;
+  top:0px;
+  z-index:2
+}
+
+
+.footer {
+  margin-top: auto;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  background-color: #e46b72;
+  width: 100%;
+  position:sticky;
+  bottom:0px
+}
+
+.footer>a {
+  color: black;
+  margin:2rem 1rem
+}
+
+.footer>a:hover {
+  color: #8e1d1f
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.title>h1,
+h4 {
+  margin: 0
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  width: 30vw;
+  list-style-type: none;
+}
+
+.navItems {
+  transition: all 0.5s ease-in-out;
+  padding: 10px 20px 10px 20px;
+  color: black;
+  font-size: 20px;
+  border-radius: 10px;
+
+}
+
+.link {
+  text-decoration: none;
+}
+
+.navItems:hover {
+  background-color: #8e1d1f;
+  color: #adc0ce
+}
+
+/* recipe card */
+
+.recipeCard {
+border: solid 2px black;
+border-radius: 10px;
+width:50vw;
+padding:2rem;
+margin: 0.5rem 0rem
+}
+
+.recipeCard > img {
+  /* max-width:25vw; */
+  max-height:30vh
+}
+
+.details {
+  display:flex;
+  justify-content: space-between;
+  margin: 1rem 0rem
+}
+
+.fullRecipe{
+  display:flex;
+  justify-content: flex-start;
+}
+
+.listContainer{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 2rem;
+}
+
+.list {
+  margin: 1rem 0rem;
+  display:flex;
+  flex-direction: column;
+}
+
+/* cook component */
+
+.cook{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:5rem 0rem
+}
+
+/* search component */
+
+.searchContainer {
+  margin: 3rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchTop {
+  margin:2rem 0rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.browseButton{
+  margin:2rem 0rem 0rem 0rem
+}
