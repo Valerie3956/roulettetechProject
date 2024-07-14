@@ -14,9 +14,6 @@ export default function Header() {
                 <Link to="cook" className = "link">
                     <li className = "navItems">View Current Recipe</li>
                 </Link>
-                <Link to="add" className = "link">
-                    <li className = "navItems">Add a recipe</li>
-                </Link>
             </ul>
         </div>
     )
