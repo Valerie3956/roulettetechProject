@@ -4,7 +4,6 @@ import Recipe from './components/Recipe';
 import { RecipeContext } from './context/RecipeContext';
 import RecipeSearch from './components/RecipeSearch';
 import { Routes, Route } from 'react-router-dom'
-import RecipeForm from './components/RecipeForm';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Cook from './components/Cook';
@@ -21,7 +20,6 @@ const {currentRecipe} = useContext(RecipeContext)
 
       <Route path = "/" element = {<RecipeSearch />}/>
       <Route path = "cook" element = {<Cook />}/>
-      <Route path = "add" element = {<RecipeForm />}/>
 
       </Routes>
 

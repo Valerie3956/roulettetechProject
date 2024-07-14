@@ -9,19 +9,66 @@ import Recipe from "./Recipe"
 export default function RecipeSearch(){
 
 const [browseCookbook, setBrowseCookbook] = useState(false)
+const [selectedDifficulty, setSelectedDifficulty] = useState("Easy")
 
-const {recipes} = useContext(RecipeContext)
+const {recipes, getByDifficulty} = useContext(RecipeContext)
+
+const handleChange = (e) => {
+    setSelectedDifficulty(e.target.value);
+  };
 
 
-
-
+  console.log(selectedDifficulty)
+  
+function handleSubmit(e){
+    e.preventDefault()
+    getByDifficulty(selectedDifficulty)
+}
     return(
         <div className = "searchContainer">
             <div className = "searchTop">
-        <h1>Search for a recipe</h1>
-        <h2>search by title</h2>
-        <h2>search by difficulty</h2>
-        <h2>search by time</h2>
+        <h1>Search for a recipe by difficulty</h1>
+        <form onSubmit = {handleSubmit}>
+        
+        <label>Difficulty:</label>
+        <div>
+          <label>
+            <input
+              type="radio"
+              name="difficulty"
+              value="Easy"
+              checked='Easy'
+              onChange={handleChange}
+            />
+            Easy
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="radio"
+              name="difficulty"
+              value="Medium"
+              checked='Medium'
+              onChange={handleChange}
+            />
+            Medium
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              type="radio"
+              name="difficulty"
+              value="Hard"
+              checked='Hard'
+              onChange={handleChange}
+            />
+            Hard
+          </label>
+        </div>
+<button>Search By Difficulty</button>
+        </form>
         <button className = "browseButton" onClick = {() => setBrowseCookbook(prevBrowse => !prevBrowse)}>{
             browseCookbook?
             'Close Cookbook' 

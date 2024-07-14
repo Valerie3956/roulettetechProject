@@ -25,7 +25,7 @@ const initCurrentRecipe = {
 const [currentRecipe, setCurrentRecipe] = useState(initCurrentRecipe)
 
 useEffect(() => {
-    axios.get('http://127.0.0.1:8000/recipes')
+    axios.get('http://127.0.0.1:8000/recipes/')
       .then(response => {
         setRecipes(response.data);
       })
@@ -40,17 +40,25 @@ function chooseRecipe(id){
   navigate("cook")
 }
 
+function getByDifficulty(difficulty){
+ axios.get(`http://127.0.0.1:8000/recipes/${difficulty}`)
+  .then(response => {
+    setRecipes(response.data);
+  })
+  .catch(error => {
+    console.error('There was an error fetching the recipes!', error);
+  })
+}
 
-
-
-
+console.log(recipes)
 
 return(
     <RecipeContext.Provider
     value = {{
 recipes,
 currentRecipe,
-chooseRecipe
+chooseRecipe,
+getByDifficulty
     }}
     >
         {props.children}
